@@ -1,0 +1,14 @@
+{
+  "name": "lembretes-prova",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Site de lembretes com Express, EJS e MongoDB para CCP120.",
+  "main": "server.js",
+  "scripts": { "start": "node server.js" },
+  "engines": { "node": ">=20.19.0" },
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.21.2",
+    "mongoose": "^8.9.5"
+  }
+}

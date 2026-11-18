@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= tipo === 'lista' ? 'Lista de lembretes' : 'Resposta' %></title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="resposta">
+  <main>
+    <% if (tipo === 'lista') { %>
+      <a href="/home.ejs">Voltar</a>
+      <h1 class="titulo-lista">Lista de lembretes:</h1>
+      <% if (lembretes.length === 0) { %>
+        <p>Nenhum lembrete cadastrado.</p>
+      <% } %>
+      <ul class="lembretes">
+        <% lembretes.forEach(function(lembrete) { %>
+          <li class="lembrete">
+            <%# A saída com sinal de igual escapa o HTML digitado no formulário. %>
+            <p>Título: <%= lembrete.titulo %></p>
+            <p>Descrição: <%= lembrete.descricao %></p>
+            <p>Local: <%= lembrete.local %></p>
+            <p>Data: <%= lembrete.data %></p>
+            <p>Hora: <%= lembrete.hora %></p>
+          </li>
+        <% }); %>
+      </ul>
+    <% } else { %>
+      <h1>Resposta:</h1>
+      <h2 class="mensagem"><%= mensagem %></h2>
+      <a href="/home.ejs">Voltar</a>
+    <% } %>
+  </main>
+</body>
+</html>
